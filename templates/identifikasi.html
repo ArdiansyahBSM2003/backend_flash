@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identifikasi Hama Sawi</title>
+  </head>
+  <body>
+    <h1>Identifikasi Hama Sawi</h1>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="my_image" accept="image/*" />
+      <input type="submit" value="Upload" />
+    </form>
+    {% if img_filename %}
+    <h2>Gambar yang diunggah:</h2>
+    <img
+      src="{{ url_for('static', filename=img_filename) }}"
+      alt="Uploaded Image"
+      width="300" />
+    {% endif %} {% if prediction %}
+    <h2>Prediksi:</h2>
+    <p>{{ prediction }}</p>
+    {% endif %}
+  </body>
+</html>
