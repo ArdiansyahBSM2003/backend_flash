@@ -1,36 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatShare</title>
-    <link rel="icon" href="/static/images/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet">
-</head>
-
-<body>
-    <div class="area">
-        <div class="circles">
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-    </div>
-    <div class="context">
-        <h1>Coding Craft YT</h1>
-        <h3>Taking Your Flask Project Beyond Localhost!</h3>
-    </div>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identifikasi Hama Sawi</title>
+  </head>
+  <body>
+    <h1>Identifikasi Hama Sawi</h1>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="my_image" accept="image/*" />
+      <input type="submit" value="Upload" />
+    </form>
+    {% if img_filename %}
+    <h2>Gambar yang diunggah:</h2>
+    <img
+      src="{{ url_for('static', filename=img_filename) }}"
+      alt="Uploaded Image"
+      width="300" />
+    {% endif %} {% if prediction %}
+    <h2>Prediksi:</h2>
+    <p>{{ prediction }}</p>
+    {% endif %}
+  </body>
 </html>
